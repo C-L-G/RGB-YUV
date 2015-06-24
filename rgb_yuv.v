@@ -11,7 +11,7 @@ ______________  \/  \/ | \/ | ______________
 	
 --Version:VERA.1.0.0
 --Data modified:
---author:Young-Œ‚√˜
+--author:Young-√é√¢√É√∑
 --E-mail: wmy367@Gmail.com
 --Data created:2015/6/18 
 ________________________________________________________
@@ -24,8 +24,8 @@ module rgb_yuv (
 	input[15:0]			bdata		,
                     
 	output[15:0]		ydata		,
-	output[15:0]		udata		,
-	output[15:0]		vdata
+	output[16:0]		udata		,
+	output[16:0]		vdata
 );
 /*
 Y''= 0.299*R'' + 0.587*G'' + 0.114*B''
@@ -178,8 +178,8 @@ cross_clk_sync #(
 	ydata
 );          
 
-assign	udata	= BY_ALL[15+:16];
-assign	vdata	= RY_ALL[15+:16];
+assign	udata	= BY_ALL[15+:17];
+assign	vdata	= RY_ALL[15+:17];
 
 endmodule
 
